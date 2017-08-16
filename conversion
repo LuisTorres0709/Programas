@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int opcion;
+    float unid;
+    cout<<"Conversión pulgadas-centimeteros y viceversa.\n";
+    do{
+        cout<<"Inserta 1 si Quieres convertir centimetros a pulgadas...\n";
+        cout<<"Inserta 2 si Quieres convertir pulgadas a centimetros...\n";
+        cout<<"Inserta 0 para salir...\n";
+        cin>>opcion;
+        switch(opcion){
+            case 1:
+                cout<<"Centimetros a pulgadas: \n";
+                cout<<"Ingresa centimetros: ";
+                cin>>unid;
+                cout<<unid<<" Centimetros equivalen a "<<unid/2.54<<" pulgadas.\n";
+                break;
+            case 2:
+                cout<<"Pulgadas a centimetros: \n";
+                cout<<"Ingresa Pulgadas: ";
+                cin>>unid;
+                cout<<unid<<" Pulgadas equivalen a "<<unid*2.54<<" centimetros.\n";
+                break;
+            default:
+                break;
+        }
+    }while(opcion!=0);
+}

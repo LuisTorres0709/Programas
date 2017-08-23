@@ -1,4 +1,4 @@
-// menu1.cpp: define el punto de entrada de la aplicación de consola.
+// menu1.cpp: define el punto de entrada de la aplicaciÃ³n de consola.
 //
 
 #include "stdafx.h"
@@ -20,11 +20,11 @@ int main()
 			cin >> num;
 			cont = 0;
 			for (int i = 1; i < num + 1; i++) {
-				if (num % 1 == 0) {
+				if (num % i == 0) {
 					cont++;
 				}
 			}
-			if (cont > 2) {
+			if (cont == 2) {
 				cout << "Es primo\n";
 			}
 			else

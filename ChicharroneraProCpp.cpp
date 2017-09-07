@@ -1,4 +1,4 @@
-// ChicharroneraProCpp.cpp: define el punto de entrada de la aplicación de consola.
+// ChicharroneraProCpp.cpp: define el punto de entrada de la aplicaciÃ³n de consola.
 //
 
 #include "stdafx.h"
@@ -8,7 +8,9 @@
 #include <math.h>
 using namespace std;
 
-void chicharronera(float a,float b,float c);
+float chicharroneraxuno(float a,float b,float c);
+float chicharroneraxdos(float a,float b,float c);
+int raiz(float a, float b, float c);
 
 int main()
 {
@@ -26,8 +28,13 @@ int main()
 			cin >> lin;
 			cout << "Inserta termino independiente(c): ";
 			cin >> inde;
-			chicharronera(cuad, lin, inde);
-			
+			if (raiz(cuad, lin, inde)==0){
+                cout<<"El resultado es Imaginario Chavos"<<endl;
+            }
+			cout<<"x1= "<<chicharroneraxuno(cuad, lin, inde)<<endl;
+			cout<<"x2= "<<chicharroneraxdos(cuad, lin, inde)<<endl;
+			system("pause");
+			system("cls");
 			break;
 		default:
 			break;
@@ -36,18 +43,32 @@ int main()
     return 0;
 }
 
-void chicharronera(float a, float b, float c) {
-	float xuno, xdos, raiz;
-	cout << a << b << c;
+float chicharroneraxuno(float a, float b, float c) {
+	float xuno, raiz;
 	raiz = (b*b)-(4*a*c);
 	if (raiz < 0) {
-		cout << "El resultado es imaginario chavos" << endl;
+
 		raiz *= -1;
 	}
 	xuno = ((-b) + sqrt(raiz)) / (2 * a);
+	return xuno;
+}
+float chicharroneraxdos(float a, float b, float c) {
+	float xdos, raiz;
+
+	raiz = (b*b)-(4*a*c);
+	if (raiz < 0) {
+
+		raiz *= -1;
+	}
 	xdos = ((-b) - sqrt(raiz)) / (2 * a);
-	cout << "X1= " << xuno << endl <<
-		"X2= " << xdos << endl;
-	system("pause");
-	system("cls");
+	return xdos;
+}
+int raiz(float a, float b, float c){
+    if(((b*b)-(4*a*c))<0){
+        return 0;
+    }
+    if(((b*b)-(4*a*c))>0){
+        return 1;
+    }
 }

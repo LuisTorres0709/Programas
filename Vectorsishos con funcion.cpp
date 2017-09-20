@@ -8,15 +8,14 @@ void mostrar(int vec[], int tama);
 void mostrarinv(int vec[], int tama);
 int suma(int vec[], int tama);
 void girarArriba(int vec[], int tama);
-//void girarAbajo(int vec[], int tama);
-//void invertirvector(int vec[], int tama);
+void girarAbajo(int vec[], int tama);
+void invertirvector(int vec[], int tama);
 
 int main() {
 	int tamano, opcion;
-	cout << "Vectorsihos...\n" <<
-		"De que tamaño te gusta? 7u7: ";
-	cin >> tamano;
-	int vectorsisho[tamano];
+	cout << "Vectorsihos...\n";
+	tamano=10;
+	int vectorsisho[10];
 	do {
 		cout << "1.- Te lo lleno... 7u7...\n" <<
 			"2.- Te muestro mi vector? ...\n" <<
@@ -45,6 +44,13 @@ int main() {
 			break;
 		case(5):
 			girarArriba(vectorsisho, tamano);
+			break;
+        case(6):
+            girarAbajo(vectorsisho, tamano);
+            break;
+        case(7):
+            invertirvector(vectorsisho, tamano);
+            break;
 		default:
 			break;
 		}
@@ -87,8 +93,26 @@ void girarArriba(int vec[], int tama) {
 		}
 		vec[i] = ayuda1;
 		ayuda1 = vec[i + 2];
-		
+
 	}
 }
-//void girarAbajo(int vec[], int tama);
-//void invertirvector(int vec[], int tama);
+void girarAbajo(int vec[], int tama){
+    int ayuda=vec[tama-1], ayuda1;
+    for(int i=tama-1; i>=0; i--){
+        ayuda1=vec[i-1];
+        vec[i]=ayuda1;
+        if(i-1<0){
+            vec[i]=ayuda;
+        }
+    }
+}
+void invertirvector(int vec[], int tama){
+    int ayuda=vec[tama-1],ayuda1;
+    for(int i=0, b=tama-1; i<5; i++, b--){
+        ayuda1=vec[i];
+        ayuda=vec[b];
+        vec[i]=ayuda;
+        vec[b]=ayuda1;
+
+    }
+}
